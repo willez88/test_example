@@ -126,3 +126,7 @@ Poner en el navegador la url que sale en el terminal para entrar el sistema
 Llegado hasta aquí el sistema ya debe estar funcionando
 
 Para salir del entorno virtual se puede ejecutar desde cualquier lugar del terminal: deactivate
+
+Grafica el modelo de datos usando el paquete pygraphviz
+
+    (test_example) ~$ python manage.py graph_models -a -g -o test_example.svg
