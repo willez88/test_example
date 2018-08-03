@@ -9,7 +9,7 @@ class HomeView(TemplateView):
 
     @author William Páez (paez.william8 at gmail.com)
     @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
-    @date 06-07-2018
+    @date 03-08-2018
     """
 
     template_name = 'base/base.html'
@@ -20,7 +20,7 @@ class Error403View(TemplateView):
 
     @author William Páez (paez.william8 at gmail.com)
     @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
-    @date 06-07-2018
+    @date 03-08-2018
     """
 
     template_name = 'base/error.403.html'

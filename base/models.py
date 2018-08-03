@@ -8,7 +8,7 @@ class Country(models.Model):
 
     @author William Páez (paez.william8 at gmail.com)
     @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
-    @date 06-07-2018
+    @date 03-08-2018
     """
 
     ## Nombre del pais
@@ -19,7 +19,7 @@ class Country(models.Model):
         Función para representar la clase de forma amigable
 
         @author William Páez (paez.william8 at gmail.com)
-        @date 06-07-2018
+        @date 03-08-2018
         @param self <b>{object}</b> Objeto que instancia la clase
         @return string <b>{object}</b> Objeto con el nombre del país
         """
@@ -32,7 +32,7 @@ class State(models.Model):
 
     @author William Páez (paez.william8 at gmail.com)
     @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
-    @date 06-07-2018
+    @date 03-08-2018
     """
 
     ## Nombre del Estado
@@ -46,7 +46,7 @@ class State(models.Model):
         Función para representar la clase de forma amigable
 
         @author William Páez (paez.william8 at gmail.com)
-        @date 06-07-2018
+        @date 03-08-2018
         @param self <b>{object}</b> Objeto que instancia la clase
         @return string <b>{object}</b> Objeto con el nombre del estado
         """
@@ -59,7 +59,7 @@ class City(models.Model):
 
     @author William Páez (paez.william8 at gmail.com)
     @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
-    @date 06-07-2018
+    @date 03-08-2018
     """
 
     ## Nombre de la Ciudad
@@ -73,9 +73,56 @@ class City(models.Model):
         Función para representar la clase de forma amigable
 
         @author William Páez (paez.william8 at gmail.com)
-        @date 06-07-2018
+        @date 03-08-2018
         @param self <b>{object}</b> Objeto que instancia la clase
         @return string <b>{object}</b> Objeto con el nombre de la ciudad
+        """
+
+        return self.name
+
+class Location(models.Model):
+    """!
+    Clase que contiene los datos de una ubicación geográfica
+
+    @author William Páez (paez.william8 at gmail.com)
+    @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
+    @date 03-08-2018
+    """
+
+    ## Establece la dirección exacta
+    address = models.CharField(max_length=500)
+
+    ## Establece la relación entre la parroquia y la ubicación
+    city = models.ForeignKey(City,on_delete=models.CASCADE)
+
+    def __str__(self):
+        """!
+        Función para representar la clase de forma amigable
+
+        @author William Páez (paez.william8 at gmail.com)
+        @date 03-08-2018
+        """
+
+        return self.address
+
+class AcademicLevel(models.Model):
+    """!
+    Clase que contiene los datos de nivel académico
+
+    @author William Páez (paez.william8 at gmail.com)
+    @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
+    @date 03-08-2018
+    """
+
+    ## Establece la dirección exacta
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        """!
+        Función para representar la clase de forma amigable
+
+        @author William Páez (paez.william8 at gmail.com)
+        @date 03-08-2018
         """
 
         return self.name

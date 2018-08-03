@@ -1,0 +1,58 @@
+[
+{
+    "model": "base.academiclevel",
+    "pk": 1,
+    "fields": {
+        "name": "Bachiller"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 2,
+    "fields": {
+        "name": "T\u00e9cnico Medio"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 3,
+    "fields": {
+        "name": "T\u00e9cnico Superior Universitario"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 4,
+    "fields": {
+        "name": "Universitario"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 16,
+    "fields": {
+        "name": "Maestr\u00eda"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 17,
+    "fields": {
+        "name": "Postgrado"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 18,
+    "fields": {
+        "name": "Doctoraro"
+    }
+},
+{
+    "model": "base.academiclevel",
+    "pk": 19,
+    "fields": {
+        "name": "Postdoctorado"
+    }
+}
+]

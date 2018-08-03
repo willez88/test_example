@@ -11,7 +11,7 @@ class ComboUpdateView(View):
 
     @author William Páez (paez.william8 at gmail.com)
     @copyright <a href='http://www.gnu.org/licenses/gpl-3.0.html'>GNU Public License versión 3 (GPLv3)</a>
-    @date 06-07-2018
+    @date 03-08-2018
     """
 
     def get(self, request, *args, **kwargs):
@@ -19,7 +19,7 @@ class ComboUpdateView(View):
         Función que obtiene los datos recibidos por el método get
 
         @author William Páez (paez.william8 at gmail.com)
-        @date 06-07-2018
+        @date 03-08-2018
         @param self <b>{object}</b> Objeto que instancia la clase
         @param request <b>{object}</b> Objeto que contiene los datos de la petición
         @param *args <b>{tuple}</b> Tupla de valores, inicialmente vacia

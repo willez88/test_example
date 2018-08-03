@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+    <div class="form-group {% if form.country.errors %}has-error{% endif %}">
+      <label class="col-xl-5 col-lg-5 col-md-5 col-sm-5 control-label" for="{{ form.country.auto_id }}">
+        {{ form.country.label }}
+      </label>
+      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+        <div class="form-inline">
+          {{ form.country }}
+          <i class="fa fa-asterisk item-required" aria-hidden="true"></i>
+        </div>
+        {% include 'base/form.errors.html' with form_errors=form.country.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+    <div class="form-group {% if form.state.errors %}has-error{% endif %}">
+      <label class="col-xl-5 col-lg-5 col-md-5 col-sm-5 control-label" for="{{ form.state.auto_id }}">
+        {{ form.state.label }}
+      </label>
+      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+        <div class="form-inline">
+          {{ form.state }}
+          <i class="fa fa-asterisk item-required" aria-hidden="true"></i>
+        </div>
+        {% include 'base/form.errors.html' with form_errors=form.state.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+    <div class="form-group {% if form.city.errors %}has-error{% endif %}">
+      <label class="col-xl-5 col-lg-5 col-md-5 col-sm-5 control-label" for="{{ form.city.auto_id }}">
+        {{ form.city.label }}
+      </label>
+      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+        <div class="form-inline">
+          {{ form.city }}
+          <i class="fa fa-asterisk item-required" aria-hidden="true"></i>
+        </div>
+        {% include 'base/form.errors.html' with form_errors=form.city.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+    <div class="form-group {% if form.address.errors %}has-error{% endif %}">
+      <label class="col-xl-5 col-lg-5 col-md-5 col-sm-5 control-label" for="{{ form.address.auto_id }}">
+        {{ form.address.label }}
+      </label>
+      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+        <div class="form-inline">
+          {{ form.address }}
+          <i class="fa fa-asterisk item-required" aria-hidden="true"></i>
+        </div>
+        {% include 'base/form.errors.html' with form_errors=form.address.errors col_title_error='col-sm-2' col_msg_error='col-sm-10' %}
+      </div>
+    </div>
+  </div>
+</div>
