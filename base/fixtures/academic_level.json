@@ -29,28 +29,28 @@
 },
 {
     "model": "base.academiclevel",
-    "pk": 16,
+    "pk": 5,
     "fields": {
         "name": "Maestr\u00eda"
     }
 },
 {
     "model": "base.academiclevel",
-    "pk": 17,
+    "pk": 6,
     "fields": {
         "name": "Postgrado"
     }
 },
 {
     "model": "base.academiclevel",
-    "pk": 18,
+    "pk": 7,
     "fields": {
         "name": "Doctoraro"
     }
 },
 {
     "model": "base.academiclevel",
-    "pk": 19,
+    "pk": 8,
     "fields": {
         "name": "Postdoctorado"
     }

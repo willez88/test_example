@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DetailView
 from django.contrib.auth.models import User
@@ -89,7 +89,7 @@ class ProfileUpdateView(UpdateView):
         @return Redirecciona al usuario a la página de error de permisos si no es su perfil
         """
 
-        if self.request.user.id == self.kwargs['pk']:
+        if self.request.user.id == self.kwargs['pk'] and Profile.objects.filter(user=self.request.user):
             return super(ProfileUpdateView, self).dispatch(request, *args, **kwargs)
         else:
             return redirect('base:error_403')
@@ -152,3 +152,21 @@ class ProfileDetailView(DetailView):
 
     model = User
     template_name = 'user/profile.detail.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        """!
+        Función que valida si el usuario del sistema tiene permisos para entrar a esta vista
+
+        @author William Páez (paez.william8 at gmail.com)
+        @date 03-08-2018
+        @param self <b>{object}</b> Objeto que instancia la clase
+        @param request <b>{object}</b> Objeto que contiene la petición
+        @param *args <b>{tupla}</b> Tupla de valores, inicialmente vacia
+        @param **kwargs <b>{dict}</b> Diccionario de datos, inicialmente vacio
+        @return Redirecciona al usuario a la página de error de permisos si no es su perfil
+        """
+
+        if self.request.user.id == self.kwargs['pk'] and Profile.objects.filter(user=self.request.user):
+            return super(ProfileUpdateView, self).dispatch(request, *args, **kwargs)
+        else:
+            return redirect('base:error_403')
