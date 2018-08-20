@@ -16,13 +16,13 @@ class Profile(models.Model):
     """
 
     ## Nivel académico
-    academic_level = models.ForeignKey(AcademicLevel, on_delete=models.CASCADE)
+    academic_level = models.ForeignKey(AcademicLevel, on_delete=models.CASCADE, verbose_name='nivel académico')
 
     ## Establece la relación entre la ubicación geográfica y el perfil
-    location = models.OneToOneField(Location, on_delete=models.CASCADE)
+    location = models.OneToOneField(Location, on_delete=models.CASCADE, verbose_name='ubicación')
 
     ## Establece la relación entre el usuario del sistema con el perfil
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='usuario')
 
     def __str__(self):
         """!
@@ -34,7 +34,7 @@ class Profile(models.Model):
         @return Una cadena de caracteres con el nombre y apellido del usuario
         """
 
-        return "%s %s" % (self.user.first_name, self.user.last_name)
+        return '%s %s' % (self.user.first_name, self.user.last_name)
 
     class Meta:
         """!
@@ -44,5 +44,5 @@ class Profile(models.Model):
         @date 03-08-2018
         """
 
-        verbose_name = _("Perfil")
-        verbose_name_plural = _("Perfiles")
+        verbose_name = _('Perfil')
+        verbose_name_plural = _('Perfiles')

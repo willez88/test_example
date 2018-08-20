@@ -5,11 +5,12 @@ from django.contrib.auth.models import User
 from .forms import ProfileForm, ProfileUpdateForm
 from base.models import Location
 from .models import Profile
+from django.contrib.messages.views import SuccessMessageMixin
 from base.constant import CREATE_MESSAGE, UPDATE_MESSAGE
 
 # Create your views here.
 
-class ProfileCreateView(CreateView):
+class ProfileCreateView(SuccessMessageMixin, CreateView):
     """!
     Clase que permite a cualquier persona registrarse en el sistema
 
@@ -61,7 +62,7 @@ class ProfileCreateView(CreateView):
         print(form.errors)
         return super(ProfileCreateView, self).form_invalid(form)
 
-class ProfileUpdateView(UpdateView):
+class ProfileUpdateView(SuccessMessageMixin, UpdateView):
     """!
     Clase que permite a un usuario actualizar sus datos de perfil
 
@@ -167,6 +168,6 @@ class ProfileDetailView(DetailView):
         """
 
         if self.request.user.id == self.kwargs['pk'] and Profile.objects.filter(user=self.request.user):
-            return super(ProfileUpdateView, self).dispatch(request, *args, **kwargs)
+            return super(ProfileDetailView, self).dispatch(request, *args, **kwargs)
         else:
             return redirect('base:error_403')

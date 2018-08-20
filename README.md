@@ -123,6 +123,16 @@ Correr el servidor de django
 
 Poner en el navegador la url que sale en el terminal para entrar el sistema
 
+Datos para entrar en el panel administrativo
+
+    usuario: william
+    clave: usuario12345
+
+Datos para entrar como un usuario
+
+    usuario: usuario
+    clave: usuario12345
+
 Llegado hasta aquí el sistema ya debe estar funcionando
 
 Para salir del entorno virtual se puede ejecutar desde cualquier lugar del terminal: deactivate

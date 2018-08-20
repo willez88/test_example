@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 
@@ -12,7 +13,7 @@ class Country(models.Model):
     """
 
     ## Nombre del pais
-    name = models.CharField(max_length=80)
+    name = models.CharField('nombre', max_length=80)
 
     def __str__(self):
         """!
@@ -26,6 +27,17 @@ class Country(models.Model):
 
         return self.name
 
+    class Meta:
+        """!
+        Meta clase del modelo que establece algunas propiedades
+
+        @author William Páez (wpaez at cenditel.gob.ve)
+        @date 19-08-2018
+        """
+
+        verbose_name = _('País')
+        verbose_name_plural = _('Paises')
+
 class State(models.Model):
     """!
     Clase que contiene los estados
@@ -36,10 +48,10 @@ class State(models.Model):
     """
 
     ## Nombre del Estado
-    name = models.CharField(max_length=50)
+    name = models.CharField('nombre', max_length=50)
 
     ## Pais en donde esta ubicado el Estado
-    country = models.ForeignKey(Country,on_delete=models.CASCADE)
+    country = models.ForeignKey(Country,on_delete=models.CASCADE, verbose_name='país')
 
     def __str__(self):
         """!
@@ -53,6 +65,17 @@ class State(models.Model):
 
         return self.name
 
+    class Meta:
+        """!
+        Meta clase del modelo que establece algunas propiedades
+
+        @author William Páez (wpaez at cenditel.gob.ve)
+        @date 19-08-2018
+        """
+
+        verbose_name = _('Estado')
+        verbose_name_plural = _('Estados')
+
 class City(models.Model):
     """!
     Clase que contiene las ciudades
@@ -63,10 +86,10 @@ class City(models.Model):
     """
 
     ## Nombre de la Ciudad
-    name = models.CharField(max_length=50)
+    name = models.CharField('nombre', max_length=50)
 
     ## Estado en donde se encuentra ubicada la Ciudad
-    state = models.ForeignKey(State,on_delete=models.CASCADE)
+    state = models.ForeignKey(State,on_delete=models.CASCADE, verbose_name='estado')
 
     def __str__(self):
         """!
@@ -80,6 +103,17 @@ class City(models.Model):
 
         return self.name
 
+    class Meta:
+        """!
+        Meta clase del modelo que establece algunas propiedades
+
+        @author William Páez (wpaez at cenditel.gob.ve)
+        @date 19-08-2018
+        """
+
+        verbose_name = _('Ciudad')
+        verbose_name_plural = _('Ciudades')
+
 class Location(models.Model):
     """!
     Clase que contiene los datos de una ubicación geográfica
@@ -90,10 +124,10 @@ class Location(models.Model):
     """
 
     ## Establece la dirección exacta
-    address = models.CharField(max_length=500)
+    address = models.CharField('dirección', max_length=500)
 
     ## Establece la relación entre la parroquia y la ubicación
-    city = models.ForeignKey(City,on_delete=models.CASCADE)
+    city = models.ForeignKey(City,on_delete=models.CASCADE, verbose_name='ciudad')
 
     def __str__(self):
         """!
@@ -105,6 +139,17 @@ class Location(models.Model):
 
         return self.address
 
+    class Meta:
+        """!
+        Meta clase del modelo que establece algunas propiedades
+
+        @author William Páez (wpaez at cenditel.gob.ve)
+        @date 19-08-2018
+        """
+
+        verbose_name = _('Ubicación')
+        verbose_name_plural = _('Ubicaciones')
+
 class AcademicLevel(models.Model):
     """!
     Clase que contiene los datos de nivel académico
@@ -115,7 +160,7 @@ class AcademicLevel(models.Model):
     """
 
     ## Establece la dirección exacta
-    name = models.CharField(max_length=50)
+    name = models.CharField('nombre', max_length=50)
 
     def __str__(self):
         """!
@@ -126,3 +171,14 @@ class AcademicLevel(models.Model):
         """
 
         return self.name
+
+    class Meta:
+        """!
+        Meta clase del modelo que establece algunas propiedades
+
+        @author William Páez (wpaez at cenditel.gob.ve)
+        @date 19-08-2018
+        """
+
+        verbose_name = _('Nivel Académico')
+        verbose_name_plural = _('Niveles Académicos')
